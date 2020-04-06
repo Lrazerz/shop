@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
       };
     }
     case UPDATE_PRODUCT: {
-      console.log('upd prod',action);
+      console.log('upd prod', action);
       const productIndex = state.userProducts.findIndex(
         product => product.id === action.productId
       );
@@ -48,6 +48,7 @@ export default (state = initialState, action) => {
       );
       const updatedAvailableProducts = [...state.availableProducts];
       updatedAvailableProducts[availableProductIndex] = updatedProduct;
+      console.log('upd prods', updatedAvailableProducts);
       return {
         ...state,
         availableProducts: updatedAvailableProducts,
